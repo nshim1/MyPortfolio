@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("./partials/head"); %>
+  </head>
+
+  <body>
+    <%-include("./partials/header"); %>
+    <!-- Portfolio Start -->
+    <div class="portfolio" id="portfolio">
+      <div class="container">
+        <header class="section-header">
+          <h3 class="section-title">My Portfolio</h3>
+          <p></p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".web-des">Web Development</li>
+              <li data-filter=".web-dev">Java Programming</li>
+              <li data-filter=".app-dev">Artificial Inteligence</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+          <div class="col-lg-4 col-md-6 portfolio-item web-des">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio-1.jpg" class="img-fluid" alt="" />
+                <a
+                  href="img/portfolio-1.jpg"
+                  data-lightbox="portfolio"
+                  data-title="Product Website design"
+                  class="link-preview"
+                  title="Preview"
+                  ><i class="fa fa-eye"></i
+                ></a>
+                <a href="#" class="link-details" title="More Details"
+                  ><i class="fa fa-link"></i
+                ></a>
+                <h4 class="portfolio-title">
+                  Product Website Project <span>Web Development</span>
+                </h4>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item web-des">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio-2.jpg" class="img-fluid" alt="" />
+                <a
+                  href="img/portfolio-2.jpg"
+                  class="link-preview"
+                  data-lightbox="portfolio"
+                  data-title="Realtor Website"
+                  title="Preview"
+                  ><i class="fa fa-eye"></i
+                ></a>
+                <a href="#" class="link-details" title="More Details"
+                  ><i class="fa fa-link"></i
+                ></a>
+                <h4 class="portfolio-title">
+                  Realtor Website Project<span>Web Development</span>
+                </h4>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio-3.jpg" class="img-fluid" alt="" />
+                <a
+                  href="img/portfolio-3.jpg"
+                  class="link-preview"
+                  data-lightbox="portfolio"
+                  data-title="School Report Form"
+                  title="Preview"
+                  ><i class="fa fa-eye"></i
+                ></a>
+                <a href="#" class="link-details" title="More Details"
+                  ><i class="fa fa-link"></i
+                ></a>
+                <h4 class="portfolio-title">
+                  School Report Form <span>Web Development</span>
+                </h4>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio-4.jpg" class="img-fluid" alt="" />
+                <a
+                  href="img/portfolio-4.jpg"
+                  class="link-preview"
+                  data-lightbox="portfolio"
+                  data-title="BMR Calculator"
+                  title="Preview"
+                  ><i class="fa fa-eye"></i
+                ></a>
+                <a href="#" class="link-details" title="More Details"
+                  ><i class="fa fa-link"></i
+                ></a>
+                <h4 class="portfolio-title">
+                  BMR Calculator <span>Web Development</span>
+                </h4>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item app-dev">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio-5.jpg" class="img-fluid" alt="" />
+                <a
+                  href="img/portfolio-5.jpg"
+                  class="link-preview"
+                  data-lightbox="portfolio"
+                  data-title="Lotto Generator"
+                  title="Preview"
+                  ><i class="fa fa-eye"></i
+                ></a>
+                <a href="#" class="link-details" title="More Details"
+                  ><i class="fa fa-link"></i
+                ></a>
+                <h4 class="portfolio-title">
+                  Lotto Generator <span>Java Programming</span>
+                </h4>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item app-dev">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio-6.jpg" class="img-fluid" alt="" />
+                <a
+                  href="img/portfolio-6.jpg"
+                  class="link-preview"
+                  data-lightbox="portfolio"
+                  data-title="Agent Project "
+                  title="Preview"
+                  ><i class="fa fa-eye"></i
+                ></a>
+                <a href="#" class="link-details" title="More Details"
+                  ><i class="fa fa-link"></i
+                ></a>
+                <h4 class="portfolio-title">
+                  Agent Project <span>Artificial Inteligence</span>
+                </h4>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio End -->
+    <%-include("./partials/footer"); %>
+  </body>
+</html>

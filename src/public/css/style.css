@@ -3,10 +3,10 @@
 /* ============================= */
 
 body {
-  color: #666666;
+  color: black;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  background: #ffffff;
+  background: white;
 }
 
 a {
@@ -34,7 +34,7 @@ h4,
 h5,
 h6 {
   font-family: "Solway", serif;
-  color: #666666;
+  color: black;
   margin: 0 0 15px 0;
   padding: 0;
 }
@@ -645,7 +645,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   right: 0;
   top: 100%;
   padding: 30px 10px;
-  color: #666666;
+  color: #000;
   font-size: 18px;
   font-weight: 400;
   text-transform: capitalize;
@@ -740,7 +740,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 0 auto 20px;
   text-align: center;
   width: 120px;
-  color: #af9483;
 }
 
 .services .single-service h4,
@@ -751,6 +750,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   letter-spacing: 0;
   text-transform: uppercase;
   margin-bottom: 10px;
+  color: #000;
 }
 
 .services .single-service p {
@@ -766,7 +766,24 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   transition: 0.5s;
 }
-
+.fa-html5 {
+  color: orangered;
+}
+.fa-css3-alt {
+  color: blue;
+}
+.fa-square-js {
+  color: goldenrod;
+}
+.fa-node {
+  color: green;
+}
+.fa-python {
+  color: gray;
+}
+.fa-java {
+  color: maroon;
+}
 /* ============================= */
 /* -------- Contact CSS -------- */
 /* ============================= */
@@ -869,15 +886,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer {
   position: relative;
-  padding: 30px 0;
+  padding: 10px 0;
   text-align: center;
   background: #222222;
 }
 
 .footer .copyright p {
-  color: #999999;
-  font-size: 18px;
-  font-weight: 300;
+  color: #fff;
+  font-size: 10px;
 }
 
 .footer .copyright p:last-child {
