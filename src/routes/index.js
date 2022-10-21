@@ -25,8 +25,8 @@ router.get("/services", function (req, res, next) {
 router.get("/contact", function (req, res, next) {
   const userInfo = {
     name: "Nayeon Shim",
-    email: "nayeon.shim@gmail.com",
-    phone: "1234567890",
+    email: "nshim1@my.centennialcollege.ca",
+    phone: "14167778439",
     title: "Web Designer & Developer",
     address: "777 Bay St, Toronto, ON, Candada",
   };
