@@ -5,7 +5,7 @@ var router = express.Router();
 router.get("/", function (req, res, next) {
   const userInfo = {
     name: "Nayeon Shim",
-    image: "me.png",
+    image: "meTop.jpg",
   };
   res.render("index", { userInfo });
 });

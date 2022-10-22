@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  color: #af9483;
+  color: #666666;
   transition: 0.5s;
 }
 
@@ -97,13 +97,15 @@ h6 {
 }
 
 .top-header img {
-  height: 200px;
+  width: 150px;
+  height: 155px;
+  object-fit: cover;
   margin-bottom: 30px;
   border: 15px solid rgba(256, 256, 256, 0.1);
 }
 
 .top-header h1 {
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 700;
   color: #ffffff;
 }
@@ -114,18 +116,21 @@ h6 {
 
 .top-header a {
   padding: 7px 30px 10px 30px;
-  color: #af9483;
+  color: #ffffff;
+  font-weight: 300;
   letter-spacing: 1px;
   transition: 0.3s;
   cursor: pointer;
   border-radius: 0;
-  border: 1px solid #af9483;
-  background: #ffffff;
+  border: 1px solid #9e9e9e;
+  background: #333333;
+  margin-top: 30px;
 }
 
 .top-header a:hover {
-  background: #af9483;
-  color: #ffffff;
+  background: #ffffff;
+  color: #333333;
+  font-weight: 300;
 }
 
 /* ============================= */
@@ -138,22 +143,25 @@ height: 50px;
 
 .header {
   width: 100%;
-  background-color: #0001;
+  background-color: #222222;
   line-height: 15px;
 }
-
 .header .container {
   display: flex;
   justify-content: space-between;
 }
-.header .logo {
-  margin: 14px 25px 0 0;
-}
 
 .header .logo {
   margin: 0;
+  margin-top: 5px;
+  margin-left: -15px;
   padding-right: 50px;
   line-height: 1;
+}
+.header .logo img {
+  width: 125px;
+  height: 65px;
+  object-fit: cover;
 }
 
 .header .logo :hover {
@@ -255,11 +263,15 @@ height: 50px;
 
 #nav-menu-container {
   margin: 0;
+  margin-top: 4.5px;
 }
 
 @media (max-width: 768px) {
   #nav-menu-container {
     display: none;
+  }
+  #nav {
+    height: auto;
   }
 }
 
@@ -267,7 +279,7 @@ height: 50px;
   padding: 22px 20px;
   text-decoration: none;
   display: inline-block;
-  color: #ffffff;
+  color: #f4f4f4;
   font-weight: 400;
   font-size: 16px;
   outline: none;
@@ -323,10 +335,6 @@ height: 50px;
   -o-transition: none;
   transition: none;
   padding: 10px 15px;
-}
-
-.nav-menu ul li a:hover {
-  color: #ffffff;
 }
 
 .nav-menu ul ul {
@@ -461,6 +469,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* ============================= */
 
 .about {
+  margin-top: 50px;
   padding: 70px 0 15px 0;
   position: relative;
 }
@@ -492,17 +501,18 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .about a {
   display: inline-block;
+  margin-top: 20px;
   padding: 6px 20px;
-  color: #af9483;
+  color: #000000;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 1px;
-  border: 1px solid #af9483;
+  border: 1px solid #959595;
 }
 
 .about a:hover {
   color: #ffffff;
-  background: #af9483;
+  background: #333333;
 }
 
 .about .skills h3 {
@@ -534,7 +544,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .about .progress .progress-bar {
-  background: #af9483;
+  background: #333333;
   border-radius: 0;
 }
 
@@ -546,6 +556,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   position: relative;
   clear: both;
   padding: 80px 0 30px 0;
+  margin-top: 20px;
 }
 
 .portfolio .section-header p {
@@ -564,18 +575,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 15px -3px 5px -3px;
   display: inline-block;
   padding: 10px 15px;
-  color: #af9483;
+  color: #333333;
   font-size: 14px;
   line-height: 15px;
   text-transform: uppercase;
-  border: 1px solid #af9483;
+  border: 1px solid #959595;
   background: #ffffff;
   transition: all 0.3s ease-in-out;
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  background: #af9483;
+  background: #333333;
   color: #ffffff;
 }
 
@@ -590,7 +601,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .portfolio .portfolio-item figure {
-  background: #af9483;
+  background: #add3ee;
   overflow: hidden;
   height: 220px;
   position: relative;
@@ -625,7 +636,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .portfolio .portfolio-item figure .link-preview:hover,
 .portfolio .portfolio-item figure .link-details:hover {
-  background: #af9483;
+  background: #6e757a;
 }
 
 .portfolio .portfolio-item figure .link-preview:hover i,
@@ -691,6 +702,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 80px 0;
   text-align: center;
   background: #ffffff;
+  margin-top: 20px;
 }
 
 .services .section-header {
@@ -717,7 +729,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   top: 0;
   right: 100%;
   left: 0;
-  background: #af9483;
+  background: #ffffff4f;
 }
 
 .services .single-service::after {
@@ -727,7 +739,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   bottom: 0;
   right: 0;
   left: 100%;
-  background: #af9483;
+  background: rgb(34, 30, 37);
 }
 
 .services .single-service:hover::before {
@@ -797,12 +809,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 .contact {
   position: relative;
   padding: 80px 0;
+  margin-top: 20px;
 }
 
 .contact .contact-info p {
   margin-bottom: 10px;
-  color: #666666;
-  font-size: 22px;
+  color: #343434;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -813,16 +826,16 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .contact .contact-info a {
-  color: #666666;
+  color: #333333;
 }
 
 .contact .contact-info a:hover {
-  color: #af9483;
+  color: #31b7c4;
 }
 
 .contact .contact-info i {
   width: 30px;
-  color: #af9483;
+  color: #398c86;
 }
 
 .contact .social {
@@ -838,15 +851,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 1px 0;
   text-align: center;
   font-size: 22px;
-  border: 1px solid #af9483;
+  border: 1px solid #398c86;
 }
 
 .contact .social a i {
-  color: #af9483;
+  color: #398c86;
 }
 
 .contact .social a:hover {
-  background: #af9483;
+  background: #398c86;
 }
 
 .contact .social a:hover i {
@@ -865,24 +878,24 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 300;
   padding: 10px 0;
   border: none;
-  border-bottom: 1px solid #af9483;
+  border-bottom: 1px solid #398c86;
   border-radius: 0;
   box-shadow: none;
 }
 
 .contact .form button[type="submit"] {
   padding: 7px 30px 10px 30px;
-  color: #af9483;
+  color: #398c86;
   letter-spacing: 1px;
   transition: 0.3s;
   cursor: pointer;
   border-radius: 0;
-  border: 1px solid #af9483;
+  border: 1px solid #398c86;
   background: #ffffff;
 }
 
 .contact .form button[type="submit"]:hover {
-  background: #af9483;
+  background: #398c86;
   color: #ffffff;
 }
 
