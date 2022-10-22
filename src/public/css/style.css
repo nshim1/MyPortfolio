@@ -33,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Ramabhadra", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   color: black;
   margin: 0 0 15px 0;
   padding: 0;
@@ -138,7 +138,7 @@ height: 50px;
 
 .header {
   width: 100%;
-  background-color: #0005;
+  background-color: #0001;
   line-height: 15px;
 }
 
@@ -228,6 +228,8 @@ height: 50px;
 
 .nav-menu ul li {
   min-width: 180px;
+
+  font-family: sans-serif;
 }
 
 .sf-arrows .sf-with-ul {
@@ -258,7 +260,7 @@ height: 50px;
 }
 
 .nav-menu a {
-  padding: 22px 15px;
+  padding: 22px 20px;
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
@@ -266,7 +268,7 @@ height: 50px;
   font-size: 16px;
   outline: none;
 }
-
+/* shine effect */
 .nav-menu a:hover,
 .nav-menu li:hover > a,
 .nav-menu .menu-active > a {
