@@ -926,3 +926,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 .auth-container {
   padding-top: 70px;
 }
+
+/* ============================= */
+/* -------- Business CSS ------- */
+/* ============================= */
+
+.business {
+  padding-top: 70px;
+}
