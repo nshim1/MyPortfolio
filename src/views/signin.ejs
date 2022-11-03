@@ -1,0 +1,42 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("./partials/head"); %>
+  </head>
+
+  <body>
+    <%-include("./partials/header"); %>
+    <!-- Login Start -->
+    <div class="auth-container">
+      <div class="row">
+        <div class="offset-md-3 col-md-3">
+          <h1><%= title %></h1>
+          <form action="/signin" method="post">
+            <div class="form-group">
+              <label>Username:</label>
+              <input type="text" name="username" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Password:</label>
+              <input type="password" name="password" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+              <input class="btn btn-primary" type="submit" value="Sign In" />
+            </div>
+            <br />
+            <div class="form-group">
+              <a href="/signup" style="text-decoration: none">
+                <i class="fas fa-user-plus"></i>
+                Signup
+              </a>
+            </div>
+          </form>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <!-- Login End -->
+    <%-include("./partials/footer"); %>
+  </body>
+</html>

@@ -4,15 +4,17 @@
  * Module dependencies.
  */
 
-var app = require("../app");
-var debug = require("debug")("generator-app:server");
-var http = require("http");
+const app = require("../app");
+const debug = require("debug")("generator-app:server");
+const http = require("http");
+const connectDB = require("../config/db");
+const configurePassport = require("../config/passport");
 
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || "8080");
+connectDB();
+const port = normalizePort(process.env.PORT || "8080");
 app.set("port", port);
 
 /**
@@ -24,7 +26,7 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
+configurePassport();
 server.listen(port, () => {
   console.log(`Server is started on ${port}`);
 });
@@ -85,4 +87,6 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
+  console.log(`Your server is listening on ${port}.`);
+
 }

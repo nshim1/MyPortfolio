@@ -918,3 +918,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 .footer .copyright p:last-child {
   margin: 0;
 }
+
+/* ============================= */
+/* ----- Login / Signup CSS ---- */
+/* ============================= */
+
+.auth-container {
+  padding-top: 70px;
+}
