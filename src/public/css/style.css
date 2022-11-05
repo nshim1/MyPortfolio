@@ -1,6 +1,7 @@
-/* ============================= */
-/* -------- General CSS -------- */
-/* ============================= */
+/*Filename: style.css
+// Student: Nayeon shim
+// StudentId: 301138611
+// Date: Nov 5, 2022 */
 
 body {
   color: black;
@@ -932,5 +933,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* ============================= */
 
 .business {
+  padding-top: 70px;
+}
+.business-container {
   padding-top: 70px;
 }

@@ -1,12 +1,15 @@
+/*Filename: index.js
+// Student: Nayeon shim
+// StudentId: 301138611
+// Date: Nov 5, 2022 */
+
 var express = require("express");
 const passport = require("passport");
 const User = require("../models/user");
+const Contact = require("../models/contact");
 var router = express.Router();
 
 function requireAuth(req, res, next) {
-  // check if the user is logged in
-
-  // ADD YOUR CODE HERE
   console.log("auth status:", req.isAuthenticated());
   if (req.isAuthenticated()) {
     //req.isAuthenticated() will return true if user is logged in
@@ -119,10 +122,92 @@ router.get("/signout", function (req, res, next) {
 });
 
 router.get("/business", requireAuth, function (req, res, next) {
-  res.render("business", {
-    title: "Business Contact List",
-    isAuth: req.isAuthenticated(),
+  Contact.find((err, contactList) => {
+    res.render("business/business", {
+      title: "Business Contact List",
+      isAuth: req.isAuthenticated(),
+      contactList,
+    });
   });
 });
 
+router.get("/business/add", requireAuth, function (req, res, next) {
+  const contact = new Contact();
+
+  res.render("business/business_add", {
+    title: "Add Business Contact",
+    isAuth: req.isAuthenticated(),
+    contact,
+    url: "/business/add",
+  });
+});
+router.post("/business/add", requireAuth, function (req, res, next) {
+  const contact = new Contact({
+    _id: req.body.id,
+    name: req.body.name,
+    number: req.body.number,
+    email: req.body.email,
+  });
+
+  contact.save((err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/business");
+    }
+  });
+});
+router.get(
+  "/business/business_add/:id",
+  requireAuth,
+  function (req, res, next) {
+    const id = req.params.id;
+
+    Contact.findById(id, (err, contact) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        res.render("business/business_add", {
+          title: "Edit a Business Contact",
+          isAuth: req.isAuthenticated(),
+          contact,
+          url: "/business/edit",
+        });
+      }
+    });
+  }
+);
+
+router.post("/business/edit", requireAuth, function (req, res, next) {
+  const newContact = Contact({
+    _id: req.body.id,
+    name: req.body.name,
+    number: req.body.number,
+    email: req.body.email,
+  });
+
+  Contact.findByIdAndUpdate(req.body.id, newContact, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/business");
+    }
+  });
+});
+
+router.get("/business/delete/:id", requireAuth, function (req, res, next) {
+  const id = req.params.id;
+
+  Contact.findByIdAndDelete(id, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/business");
+    }
+  });
+});
 module.exports = router;
