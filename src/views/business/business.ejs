@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("../partials/head"); %>
+  </head>
+
+  <body>
+    <%-include("../partials/header"); %>
+    <!-- Business Start -->
+    <main class="container">
+      <h1><%= title %></h1>
+      <br />
+      <div class="row">
+        <div class="float-start">
+          <a
+            href="/business/add"
+            class="btn btn-primary"
+            role="button"
+            color="grey"
+          >
+            <i class="fas fa-plus-circle"></i>
+            Add a Business contact card
+          </a>
+        </div>
+      </div>
+      <br />
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Number</th>
+            <th class="text-center">Email</th>
+            <th class="text-center" colspan="3">Actions</th>
+          </tr>
+
+          <% for(let i = 0; i < contactList.length; i++) { %>
+          <tr>
+            <td class="text-center"><%= contactList[i].name %></td>
+            <td class="text-center"><%= contactList[i].number %></td>
+            <td class="text-center"><%= contactList[i].email %></td>
+            <td class="text-center">
+              <a
+                href="/business/business_add/<%= contactList[i]._id %>"
+                class="btn btn-primary btn-sm"
+              >
+                <i class="fas fa-pencil-alt"></i
+              ></a>
+            </td>
+            <td class="text-center">
+              <a
+                href="/business/delete/<%= contactList[i]._id %>"
+                class="btn btn-danger btn-sm"
+              >
+                <i class="fas fa-trash-alt"></i
+              ></a>
+            </td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </main>
+
+    <!-- Business End -->
+    <%-include("../partials/footer"); %>
+  </body>
+</html>

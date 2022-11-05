@@ -1,8 +1,14 @@
+<!-- 
+Filename: header.ejs
+Student: Nayeon shim
+StudentId: 301138611
+Date: Oct 22, 2022  -->
+
 <!-- Nav Start -->
 <div class="header" id="nav">
   <div class="container">
     <div class="logo pull-left">
-        <a href="/"><img src="img/logoBWC.png" alt="logoImg" height="60px" width="80px"></img></a>
+        <a href="/"><img src="/img/logoBWC.png" alt="logoImg" height="60px" width="80px"></img></a>
     </div>
 
     <nav id="nav-menu-container">
@@ -12,6 +18,13 @@
         <li><a href="/projects">Projects</a></li>
         <li><a href="/services">Services</a></li>
         <li><a href="/contact">Contact</a></li>
+        <% if(isAuth) { %>
+          <li><a href="/business">Business Contact</a></li>
+          <li><a href="/signout">Sign Out</a></li>
+        <% } else { %>
+          <li><a href="/signin">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        <% } %>
       </ul>
     </nav>
   </div>
