@@ -1,9 +1,3 @@
-<!-- 
-Filename: header.ejs
-Student: Nayeon shim
-StudentId: 301138611
-Date: Oct 22, 2022  -->
-
 <!-- Nav Start -->
 <div class="header" id="nav">
   <div class="container">
@@ -19,17 +13,35 @@ Date: Oct 22, 2022  -->
         <li><a href="/services">Services</a></li>
         <li><a href="/contact">Contact</a></li>
         <% if(isAuth) { %>
-          <li><a href="/business">Business Contact</a></li>
-          <li><a href="/signout">Sign Out</a></li>
+        <li><a href="/business">Business Contact</a></li>
+        <li><a href="/signout">Sign Off</a></li>
         <% } else { %>
           <div class="nav-auth">
             <li><a href="/signin"><i class="fa-solid fa-user"></i></a></li>
-          <li><a href="/signup"><i class="fa-solid fa-user-plus"></i></a></li>
+            <li><a href="/signup"><i class="fa-solid fa-user-plus"></i></a></li>
           </div>
-          
+        
         <% } %>
       </ul>
+      <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
     </nav>
   </div>
+  <ul class="mobile-menu no-display" id="mobile-menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About me</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <% if(isAuth) { %>
+    <li><a href="/business">Business Contact</a></li>
+    <li><a href="/signout">Sign Off</a></li>
+    <% } else { %>
+      <div class="nav-auth">
+        <li><a href="/signin"><i class="fa-solid fa-user"></i></a></li>
+        <li><a href="/signup"><i class="fa-solid fa-user-plus"></i></a></li>
+      </div>
+    
+    <% } %>
+  </ul>
 </div>
 <!-- Nav End -->

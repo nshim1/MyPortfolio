@@ -1,7 +1,6 @@
-/*Filename: style.css
-// Student: Nayeon shim
-// StudentId: 301138611
-// Date: Nov 5, 2022 */
+/* ============================= */
+/* -------- General CSS -------- */
+/* ============================= */
 
 body {
   color: black;
@@ -152,11 +151,6 @@ height: 50px;
   justify-content: space-between;
 }
 
-@media (max-width: 576px){
-  .header .container{
-    flex-direction: column;
-  }
-}
 .header .logo {
   margin: 0;
   margin-top: 5px;
@@ -250,6 +244,26 @@ height: 50px;
   font-family: sans-serif;
 }
 
+.mobile-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.no-display {
+  display: none;
+}
+
+.mobile-menu li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.mobile-menu li a {
+  color: white;
+}
+
 .sf-arrows .sf-with-ul {
   padding-right: 30px;
 }
@@ -271,17 +285,37 @@ height: 50px;
   margin: 0;
   margin-top: 4.5px;
   margin-right: 90px;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
-  #nav-menu-container{
+  #nav-menu-container {
     margin-right: 0;
-  }
-  .header .container{
-    flex-direction: column;
   }
   #nav {
     height: auto;
+  }
+}
+
+.hamburger {
+  display: none;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 1rem;
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
   }
 }
 
@@ -316,12 +350,7 @@ height: 50px;
     -webkit-mask-position: -50%;
   }
 }
-.nav-menu .nav-auth{
-  position: fixed;
-  top: 4px;
-  right: 2rem;
-  display: flex;
-}
+
 .nav-menu ul {
   margin: 7px 0 0 15px;
   -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.08);
@@ -354,6 +383,13 @@ height: 50px;
 
 .nav-menu ul ul {
   margin: 0;
+}
+
+.nav-menu .nav-auth {
+  position: fixed;
+  top: 4px;
+  right: 2rem;
+  display: flex;
 }
 
 #mobile-nav-toggle {
@@ -935,20 +971,19 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /* ============================= */
-/* ----- Login / Signup CSS ---- */
+/* ---- Login / Signup CSS ----- */
 /* ============================= */
-
 .auth-container {
   padding-top: 70px;
 }
 
 /* ============================= */
-/* -------- Business CSS ------- */
+/* ---------- Business --------- */
 /* ============================= */
-
 .business {
   padding-top: 70px;
 }
+
 .business-container {
   padding-top: 70px;
 }

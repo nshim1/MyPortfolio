@@ -1,15 +1,14 @@
-/*Filename: index.js
-// Student: Nayeon shim
-// StudentId: 301138611
-// Date: Nov 5, 2022 */
-
 var express = require("express");
 const passport = require("passport");
 const User = require("../models/user");
 const Contact = require("../models/contact");
 var router = express.Router();
 
+// Helper function for guard purposes
 function requireAuth(req, res, next) {
+  // check if the user is logged in
+
+  // ADD YOUR CODE HERE
   console.log("auth status:", req.isAuthenticated());
   if (req.isAuthenticated()) {
     //req.isAuthenticated() will return true if user is logged in
@@ -67,22 +66,22 @@ router.get("/signin", function (req, res, next) {
 });
 
 router.post("/signin", function (req, res, next) {
-  //passport local authentication
   passport.authenticate("local", {
     successRedirect: req.session.url || "/",
     failureRedirect: "/signup",
     failureFlash: true,
-  })(req, res, next); // curling
+  })(req, res, next);
   delete req.session.url;
 });
+
 router.get("/signup", function (req, res, next) {
   if (req.isAuthenticated()) {
     res.redirect("/");
   }
   res.render("signup", {
     title: "Sign up",
-    isAuth: req.isAuthenticated(),
     user: {},
+    isAuth: req.isAuthenticated(),
   });
 });
 
@@ -92,13 +91,11 @@ router.post("/signup", function (req, res, next) {
 
     let user = new User(req.body);
     user.provider = "local";
-    console.log(user);
 
     user.save((err) => {
       if (err) {
         return res.render("/signup", {
           title: "Sign-up Form",
-          messages: req.flash("error"),
           user: user,
         });
       }
@@ -123,7 +120,7 @@ router.get("/signout", function (req, res, next) {
 
 router.get("/business", requireAuth, function (req, res, next) {
   Contact.find((err, contactList) => {
-    res.render("business/business", {
+    res.render("business/list", {
       title: "Business Contact List",
       isAuth: req.isAuthenticated(),
       contactList,
@@ -133,52 +130,51 @@ router.get("/business", requireAuth, function (req, res, next) {
 
 router.get("/business/add", requireAuth, function (req, res, next) {
   const contact = new Contact();
-
-  res.render("business/business_add", {
-    title: "Add Business Contact",
+  res.render("business/add_edit", {
+    title: "Add a Business Contact",
     isAuth: req.isAuthenticated(),
     contact,
     url: "/business/add",
   });
 });
+
 router.post("/business/add", requireAuth, function (req, res, next) {
-  const contact = new Contact({
+  const newContact = Contact({
     _id: req.body.id,
     name: req.body.name,
     number: req.body.number,
     email: req.body.email,
   });
 
-  contact.save((err) => {
+  newContact.save((err) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
+      //Redirect to list when it is saved successfully
       res.redirect("/business");
     }
   });
 });
-router.get(
-  "/business/business_add/:id",
-  requireAuth,
-  function (req, res, next) {
-    const id = req.params.id;
 
-    Contact.findById(id, (err, contact) => {
-      if (err) {
-        console.log(err);
-        res.end(err);
-      } else {
-        res.render("business/business_add", {
-          title: "Edit a Business Contact",
-          isAuth: req.isAuthenticated(),
-          contact,
-          url: "/business/edit",
-        });
-      }
-    });
-  }
-);
+router.get("/business/edit/:id", requireAuth, function (req, res, next) {
+  const id = req.params.id;
+
+  Contact.findById(id, (err, contact) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //show the edit view
+      res.render("business/add_edit", {
+        title: "Edit a Business Contact",
+        isAuth: req.isAuthenticated(),
+        contact,
+        url: "/business/edit",
+      });
+    }
+  });
+});
 
 router.post("/business/edit", requireAuth, function (req, res, next) {
   const newContact = Contact({
@@ -193,6 +189,7 @@ router.post("/business/edit", requireAuth, function (req, res, next) {
       console.log(err);
       res.end(err);
     } else {
+      //Redirect to list when it is saved successfully
       res.redirect("/business");
     }
   });
@@ -206,8 +203,10 @@ router.get("/business/delete/:id", requireAuth, function (req, res, next) {
       console.log(err);
       res.end(err);
     } else {
+      //Redirect to list when it is deleted successfully
       res.redirect("/business");
     }
   });
 });
+
 module.exports = router;

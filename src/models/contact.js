@@ -1,8 +1,3 @@
-/*Filename: contact.js
-// Student: Nayeon shim
-// StudentId: 301138611
-// Date: Nov 5, 2022 */
-
 let mongoose = require("mongoose");
 
 let ContactSchema = mongoose.Schema(

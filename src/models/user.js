@@ -1,11 +1,5 @@
-/*Filename: user.js
-// Student: Nayeon shim
-// StudentId: 301138611
-// Date: Nov 5, 2022 */
-
 let mongoose = require("mongoose");
 let crypto = require("crypto");
-let Schema = mongoose.Schema;
 
 let UserSchema = mongoose.Schema(
   {

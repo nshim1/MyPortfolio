@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include("../partials/head"); %>
+  </head>
+  <body>
+    <%-include("../partials/header"); %>
+    <!-- Content for the Add_Edit page -->
+    <div class="business-container">
+      <div class="row">
+        <div class="offset-md-3 col-md-6">
+          <h1><%= title %></h1>
+
+          <form class="form" method="POST" action="<%= url %>">
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= contact._id %>" />
+              <label for="nameTextField">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nameTextField"
+                placeholder="Enter the name"
+                name="name"
+                value="<%= contact.name %>"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="numberTextField">Number</label>
+              <input
+                type="number"
+                class="form-control"
+                id="numberTextField"
+                placeholder="Enter the number"
+                name="number"
+                value="<%= contact.number %>"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="emailTextField">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="emailTextField"
+                placeholder="Enter the email"
+                name="email"
+                value="<%= contact.email %>"
+              />
+            </div>
+
+            <br />
+            <button class="btn btn-primary" type="submit">
+              <i class="fas fa-edit"></i>
+              Submit
+            </button>
+
+            <a href="/business" class="btn btn-warning">
+              <i class="fas fa-undo"></i>
+              Cancel
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Content for the Add_Edit page -->
+    <%-include("../partials/footer"); %>
+  </body>
+</html>

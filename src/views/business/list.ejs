@@ -3,7 +3,6 @@
   <head>
     <%-include("../partials/head"); %>
   </head>
-
   <body>
     <%-include("../partials/header"); %>
     <!-- Business Start -->
@@ -12,9 +11,12 @@
       <br />
       <div class="row">
         <div class="float-start">
+          <!-- ------------------------ -->
+          <!-- Fix the ADD button below -->
+          <!-- ------------------------ -->
           <a href="/business/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i>
-            Add a Business contact card
+            Add a business contact card
           </a>
         </div>
       </div>
@@ -22,6 +24,7 @@
 
       <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
+          <!-- Header Row-->
           <tr>
             <th class="text-center">Name</th>
             <th class="text-center">Number</th>
@@ -29,20 +32,28 @@
             <th class="text-center" colspan="3">Actions</th>
           </tr>
 
+          <!-- Repeatable Template Row -->
+
           <% for(let i = 0; i < contactList.length; i++) { %>
           <tr>
             <td class="text-center"><%= contactList[i].name %></td>
             <td class="text-center"><%= contactList[i].number %></td>
             <td class="text-center"><%= contactList[i].email %></td>
             <td class="text-center">
+              <!-- ------------------------- -->
+              <!-- Fix the EDIT button below -->
+              <!-- ------------------------- -->
               <a
-                href="/business/business_add/<%= contactList[i]._id %>"
+                href="/business/edit/<%= contactList[i]._id %>"
                 class="btn btn-primary btn-sm"
               >
                 <i class="fas fa-pencil-alt"></i
               ></a>
             </td>
             <td class="text-center">
+              <!-- --------------------------- -->
+              <!-- Fix the DELETE button below -->
+              <!-- --------------------------- -->
               <a
                 href="/business/delete/<%= contactList[i]._id %>"
                 class="btn btn-danger btn-sm"
